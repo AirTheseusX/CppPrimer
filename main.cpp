@@ -14,13 +14,10 @@ void foo(int &x)
 
 int main()
 {
-    int a = 10;
-    int &b = a;
+    string str("Hello, World!");
 
-    foo(a);
-    foo(b);
+    if (!str.empty())
+        cout << str[0] << endl;
 
-    cout << "a: " << a << endl;
-    cout << "b: " << b << endl;
-    cout << "test" << endl;
+    cout << str << endl;
 }
