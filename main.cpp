@@ -11,6 +11,7 @@ void foo(int &x)
     cout << "x: " << x << endl;
     x = 11;
 }
+
 int main()
 {
     int a = 10;
