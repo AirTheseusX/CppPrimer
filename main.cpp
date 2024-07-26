@@ -1,10 +1,12 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 using std::cout;
 using std::cin;
 using std::endl;
 using std::string;
+using std::vector;
 
 void foo(int &x)
 {
@@ -14,10 +16,12 @@ void foo(int &x)
 
 int main()
 {
-    string str("Hello, World!");
+    const string s("qe*(di)8adu;adiw-=*4ujr");
+    string str("");
 
-    if (!str.empty())
-        cout << str[0] << endl;
+    for (auto &i: s)
+        if (isalpha(i) || isalnum(i))
+            str += i;
 
     cout << str << endl;
 }
