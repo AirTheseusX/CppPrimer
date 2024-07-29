@@ -8,20 +8,33 @@ using std::endl;
 using std::string;
 using std::vector;
 
-void foo(int &x)
-{
-    cout << "x: " << x << endl;
-    x = 11;
-}
-
 int main()
 {
-    const string s("qe*(di)8adu;adiw-=*4ujr");
-    string str("");
+    vector<int> vnum;
+    int input = 0;
 
-    for (auto &i: s)
-        if (isalpha(i) || isalnum(i))
-            str += i;
+    while (cin >> input)
+    {
+        if (cin.get() == '\n')
+            break;
 
-    cout << str << endl;
+        cout << input << endl;
+        vnum.push_back(input);
+    }
+
+    if (vnum.size() == 0)
+    {
+        cout << 0 << endl;
+    }
+    if (vnum.size() == 1)
+    {
+        cout << vnum[0] << endl;
+    }
+    else
+    {
+        for (int i = 0; i < vnum.size(); i += 2)
+        {
+            cout << vnum[i] + vnum[i + 1] << endl;
+        }
+    }
 }
