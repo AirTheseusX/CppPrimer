@@ -15,12 +15,10 @@ int main()
 
     while (cin >> input)
     {
-        if (cin.get() == '\n')
-            break;
-
-        cout << input << endl;
         vnum.push_back(input);
     }
+
+    cout << "input size: " << vnum.size() << endl;
 
     if (vnum.size() == 0)
     {
@@ -32,9 +30,16 @@ int main()
     }
     else
     {
-        for (int i = 0; i < vnum.size(); i += 2)
+        for (int i = 0,j = vnum.size() - 1; i <= j; i++, j--)
         {
-            cout << vnum[i] + vnum[i + 1] << endl;
+            if (i != j)
+            {
+                cout << vnum[i] + vnum[j] << endl;
+            }
+            else
+            {
+                cout << vnum[i] << endl;
+            }
         }
     }
 }
