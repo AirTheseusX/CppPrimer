@@ -10,36 +10,11 @@ using std::vector;
 
 int main()
 {
-    vector<int> vnum;
-    int input = 0;
+    vector<int> vnum = {1, 2, 3, 4, 5, 6, 7, 8,9, 10};
 
-    while (cin >> input)
-    {
-        vnum.push_back(input);
-    }
+    for (auto it = vnum.begin(); it != vnum.end();  it++)
+        *it *= 2;
 
-    cout << "input size: " << vnum.size() << endl;
-
-    if (vnum.size() == 0)
-    {
-        cout << 0 << endl;
-    }
-    if (vnum.size() == 1)
-    {
-        cout << vnum[0] << endl;
-    }
-    else
-    {
-        for (int i = 0,j = vnum.size() - 1; i <= j; i++, j--)
-        {
-            if (i != j)
-            {
-                cout << vnum[i] + vnum[j] << endl;
-            }
-            else
-            {
-                cout << vnum[i] << endl;
-            }
-        }
-    }
+    for (auto i : vnum)
+        cout << i << " ";
 }
