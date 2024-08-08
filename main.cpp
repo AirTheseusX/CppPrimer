@@ -7,14 +7,23 @@ using std::cin;
 using std::endl;
 using std::string;
 using std::vector;
+using std::begin;
+using std::end;
 
 int main()
 {
-    vector<int> vnum = {1, 2, 3, 4, 5, 6, 7, 8,9, 10};
+    int num[5] = {1, 2, 3, 4 ,5};
 
-    for (auto it = vnum.begin(); it != vnum.end();  it++)
-        *it *= 2;
-
-    for (auto i : vnum)
+    for (auto i : num)
         cout << i << " ";
+    cout << endl;
+
+    for (int *p = begin(num); p != end(num); p++)
+    {
+        *p = 0;
+    }
+
+    for (auto i : num)
+        cout << i << " ";
+    cout << endl;
 }
