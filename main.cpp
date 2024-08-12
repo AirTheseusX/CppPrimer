@@ -12,18 +12,15 @@ using std::end;
 
 int main()
 {
-    int num[5] = {1, 2, 3, 4 ,5};
+    int num = 0;
 
-    for (auto i : num)
-        cout << i << " ";
-    cout << endl;
-
-    for (int *p = begin(num); p != end(num); p++)
+    while (cin >> num)
     {
-        *p = 0;
+        if (num == 42)
+        {
+            break;
+        }
     }
 
-    for (auto i : num)
-        cout << i << " ";
-    cout << endl;
+    cout << "OVER" << endl;
 }
