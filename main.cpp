@@ -12,15 +12,12 @@ using std::end;
 
 int main()
 {
-    int num = 0;
+    vector<int> n = {1,2,3,4,5};
 
-    while (cin >> num)
+    for (auto it = n.begin(); it != n.end(); it++)
     {
-        if (num == 42)
-        {
-            break;
-        }
-    }
+        *it = ((*it) % 2 == 0) ? (*it *= 2) : *it;
 
-    cout << "OVER" << endl;
+        cout <<  *it << " " << endl;
+    }
 }
