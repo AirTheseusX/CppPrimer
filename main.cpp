@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <stdexcept>
 
 using std::cout;
 using std::cin;
@@ -12,12 +13,33 @@ using std::end;
 
 int main()
 {
-    vector<int> n = {1,2,3,4,5};
+    vector<string> buff;
+    string str;
 
-    for (auto it = n.begin(); it != n.end(); it++)
+    while (cin >> str && !str.empty())
     {
-        *it = ((*it) % 2 == 0) ? (*it *= 2) : *it;
+        cout << "print: " << str << endl;
 
-        cout <<  *it << " " << endl;
+        for (auto i : buff)
+        {
+            try
+            {
+                if (i == str)
+                {
+                    throw std::runtime_error("Same input!");
+                }
+            }
+            catch (std::runtime_error err)
+            {
+                cout << err.what() << "Catch run time error!" << endl;
+                break;
+            }
+        }
+
+        buff.push_back(str);
     }
+
+    cout << "no same str!" << endl;
+
+    return 0;
 }
