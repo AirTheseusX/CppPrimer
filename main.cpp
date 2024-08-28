@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <stdexcept>
+#include <initializer_list>
 
 using std::cout;
 using std::cin;
@@ -10,36 +11,23 @@ using std::string;
 using std::vector;
 using std::begin;
 using std::end;
+using std::initializer_list;
 
-int main()
+unsigned long long count = 0;
+int & foo(int *arry, int index)
 {
-    vector<string> buff;
-    string str;
+    return arry[index];
+}
 
-    while (cin >> str && !str.empty())
+int main(int argc, char *arg[])
+{
+    int arry[10] = {0};
+
+    for (int i = 0; i < 10; ++i)
     {
-        cout << "print: " << str << endl;
-
-        for (auto i : buff)
-        {
-            try
-            {
-                if (i == str)
-                {
-                    throw std::runtime_error("Same input!");
-                }
-            }
-            catch (std::runtime_error err)
-            {
-                cout << err.what() << "Catch run time error!" << endl;
-                break;
-            }
-        }
-
-        buff.push_back(str);
+        foo(arry, i)  = i;
+        cout << arry[i] << " ";
     }
-
-    cout << "no same str!" << endl;
 
     return 0;
 }
