@@ -13,21 +13,20 @@ using std::begin;
 using std::end;
 using std::initializer_list;
 
-unsigned long long count = 0;
-int & foo(int *arry, int index)
+void foo(const vector<int> &x, int index)
 {
-    return arry[index];
+    if (index < x.size())
+    {
+        cout << x[index] << " " << endl;
+
+        foo(x, index + 1);
+    }
 }
 
 int main(int argc, char *arg[])
 {
-    int arry[10] = {0};
-
-    for (int i = 0; i < 10; ++i)
-    {
-        foo(arry, i)  = i;
-        cout << arry[i] << " ";
-    }
+    vector<int> n = {1,2,3,4,5};
+    foo(n, 0);
 
     return 0;
 }
