@@ -23,6 +23,9 @@ void foo(const vector<int> &x, int index)
     }
 }
 
+string (&fun(int x)) [10];
+auto fun1(int x) -> string (*) [10];
+
 int main(int argc, char *arg[])
 {
     vector<int> n = {1,2,3,4,5};
