@@ -13,23 +13,37 @@ using std::begin;
 using std::end;
 using std::initializer_list;
 
-void foo(const vector<int> &x, int index)
+void foo()
 {
-    if (index < x.size())
-    {
-        cout << x[index] << " " << endl;
 
-        foo(x, index + 1);
-    }
 }
 
-string (&fun(int x)) [10];
-auto fun1(int x) -> string (*) [10];
+void  foo(int x)
+{
+    cout << x << endl;
+}
+
+void foo(int x, int y)
+{
+    cout << x << " " << y << endl;
+}
+
+void foo(double x, double y = 3.14)
+{
+    cout << x << " " << y << endl;
+}
+
+void foo(double x, int y)
+{
+    cout << x << " " << y << endl;
+}
 
 int main(int argc, char *arg[])
 {
-    vector<int> n = {1,2,3,4,5};
-    foo(n, 0);
+    foo(2.56, 42);
+    foo(42);
+    foo(42, 0);
+    foo(2.56, 3.1);
 
     return 0;
 }
