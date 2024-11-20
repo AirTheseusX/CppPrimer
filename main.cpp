@@ -38,12 +38,19 @@ void foo(double x, int y)
     cout << x << " " << y << endl;
 }
 
+int bar(int, int);
+typedef decltype(bar) *barfun;
+
 int main(int argc, char *arg[])
 {
     foo(2.56, 42);
     foo(42);
     foo(42, 0);
     foo(2.56, 3.1);
+    int *p = nullptr;
+
+    vector<decltype(bar) *> x;
+    vector<barfun> y;
 
     return 0;
 }
