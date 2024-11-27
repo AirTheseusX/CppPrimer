@@ -1,5 +1,10 @@
 #ifndef PROJECT_SALSE_DATA_H
 #define PROJECT_SALSE_DATA_H
+class Sales_data
+{
+public:
+private:
+};
 #if 0
 #include <iostream>
 #include <string>
