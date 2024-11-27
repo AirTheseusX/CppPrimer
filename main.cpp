@@ -13,29 +13,14 @@ using std::begin;
 using std::end;
 using std::initializer_list;
 
-void foo()
+int add(int x, int y)
 {
-
+    return x + y;
 }
 
-void  foo(int x)
+int sub(int x, int y)
 {
-    cout << x << endl;
-}
-
-void foo(int x, int y)
-{
-    cout << x << " " << y << endl;
-}
-
-void foo(double x, double y = 3.14)
-{
-    cout << x << " " << y << endl;
-}
-
-void foo(double x, int y)
-{
-    cout << x << " " << y << endl;
+    return x - y;
 }
 
 int bar(int, int);
@@ -43,14 +28,9 @@ typedef decltype(bar) *barfun;
 
 int main(int argc, char *arg[])
 {
-    foo(2.56, 42);
-    foo(42);
-    foo(42, 0);
-    foo(2.56, 3.1);
-    int *p = nullptr;
+    vector<barfun> funlist= {add, sub};
 
-    vector<decltype(bar) *> x;
-    vector<barfun> y;
+    cout << funlist[0](4, 5) << endl << funlist[1](9, 2) << endl;
 
     return 0;
 }
