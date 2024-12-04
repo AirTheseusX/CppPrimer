@@ -3,7 +3,7 @@
 #include <vector>
 #include <stdexcept>
 #include <initializer_list>
-#include "include/sales_data.h"
+#include "sales_data.h"
 
 using std::cout;
 using std::cin;
