@@ -1,10 +1,24 @@
 #ifndef PROJECT_SALSE_DATA_H
 #define PROJECT_SALSE_DATA_H
-class Sales_data
+
+#include <string>
+#include <iostream>
+
+using std::string;
+
+struct Sales_data
 {
-public:
-private:
+    string isbn() {return bookNo;}
+    Sales_data &combine(const Sales_data &);
+    double avg_price() const;
+
+    string bookNo;
 };
+
+Sales_data add(const Sales_data &, const Sales_data &);
+std::ostream &print(std::ostream &, const Sales_data &);
+std::istream &read(std::istream &, Sales_data &);
+
 #if 0
 #include <iostream>
 #include <string>
