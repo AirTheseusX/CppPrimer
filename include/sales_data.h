@@ -13,6 +13,8 @@ struct Sales_data
     double avg_price() const;
 
     string bookNo;
+    int units_sold;
+    int revenue;
 };
 
 Sales_data add(const Sales_data &, const Sales_data &);
