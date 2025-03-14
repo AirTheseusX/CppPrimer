@@ -6,9 +6,10 @@
 
 using std::string;
 
-struct Sales_data
+class Sales_data
 {
-    string isbn() {return bookNo;}
+public:
+    string isbn() const {return bookNo;}
     Sales_data &combine(const Sales_data &);
     double avg_price() const;
 
