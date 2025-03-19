@@ -34,5 +34,8 @@ ostream & print(ostream &os, const Sales_data &item) {
 }
 
 Sales_data add(const Sales_data &lhs, const Sales_data &rhs) {
-    lhs.combine(rhs);
+    Sales_data salesSum = lhs;
+    salesSum.combine(rhs);
+
+    return salesSum;
 }
