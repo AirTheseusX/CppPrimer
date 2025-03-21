@@ -5,17 +5,23 @@
 #include <iostream>
 
 using std::string;
+using std::istream;
 
 class Sales_data
 {
 public:
+    Sales_data() = default;
+    Sales_data(const string s) : bookNo(s) {}
+    Sales_data(const string s, unsigned int sold, double price) : bookNo(s), units_sold(sold), revenue(sold * price) {}
+    Sales_data(istream &is);
+
     string isbn() const {return bookNo;}
     Sales_data &combine(const Sales_data &);
     double avg_price() const;
 
     string bookNo;
-    int units_sold;
-    int revenue;
+    unsigned int units_sold = 0;
+    double revenue = 0.0;
 };
 
 Sales_data add(const Sales_data &, const Sales_data &);

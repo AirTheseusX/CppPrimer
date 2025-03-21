@@ -2,6 +2,11 @@
 using std::istream;
 using std::ostream;
 
+Sales_data::Sales_data(istream &is)
+{
+    read(is, *this);
+}
+
 double Sales_data::avg_price() const
 {
     if (units_sold)
