@@ -15,10 +15,14 @@ private:
     string address;
 
 public:
+    Person() = default;
+    Person(string name, string address) : name(name), address(address) {}
+    Person(istream &is);
+
     string getName() const;
     string getAddress() const;
-    void readPerson(istream is);
-    void printPerson();
+    void readPerson(istream &is);
+    void printPerson(ostream &os);
 };
 
 #endif
