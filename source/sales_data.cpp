@@ -44,3 +44,13 @@ Sales_data add(const Sales_data &lhs, const Sales_data &rhs) {
 
     return salesSum;
 }
+
+inline char Screen::getTargetPos(Screen::pos height, Screen::pos width) const {
+    return contents[height * width];
+}
+
+inline Screen &Screen::move(Screen::pos r, Screen::pos c) {
+    cursor = r * width + c;
+
+    return *this;
+}

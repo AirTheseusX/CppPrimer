@@ -28,6 +28,23 @@ Sales_data add(const Sales_data &, const Sales_data &);
 std::ostream &print(std::ostream &, const Sales_data &);
 std::istream &read(std::istream &, Sales_data &);
 
+class Screen  {
+public:
+    typedef string::size_type pos;
+
+    Screen() = default;
+    Screen(pos height, pos width, char c) : height(height), width(width), contents(height * width, c) {}
+
+    char getCursorContent() const { return contents[cursor]; }
+    inline char getTargetPos(pos height, pos width) const;
+    Screen &move(pos r, pos c);
+
+private:
+    pos cursor = 0;
+    pos height = 0, width = 0;
+    string contents;
+};
+
 #if 0
 #include <iostream>
 #include <string>
