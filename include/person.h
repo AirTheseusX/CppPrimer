@@ -25,4 +25,27 @@ public:
     void printPerson(ostream &os);
 };
 
+class Screen
+{
+public:
+    Screen() = default;
+
+private:
+    string contents;
+}
+
+class Y;
+
+class X
+{
+private:
+    Y *pY;
+};
+
+class Y
+{
+private:
+    X x;
+};
+
 #endif
