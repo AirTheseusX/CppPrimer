@@ -32,7 +32,7 @@ public:
 
 private:
     string contents;
-}
+};
 
 class Y;
 
