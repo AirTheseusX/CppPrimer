@@ -25,6 +25,7 @@ public:
     void printPerson(ostream &os);
 };
 
+/*
 class Screen
 {
 public:
@@ -32,7 +33,7 @@ public:
 
 private:
     string contents;
-};
+};*/
 
 class Y;
 
@@ -48,4 +49,13 @@ private:
     X x;
 };
 
+class ConstClass
+{
+public:
+    ConstClass(int v) : value(v) {}
+    void printValue();
+
+private:
+    const int value;
+};
 #endif
