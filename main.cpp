@@ -23,5 +23,9 @@ int main(int argc, char *arg[])
     Sales_data sales3("Hello!", 10, 9.99);
     Sales_data sales4(cin);
 
+    //StaticClass obj(12,13);
+    //StaticClass::output();
+    //obj.modify(90, 100);
+    //StaticClass::output();
     return 0;
 }

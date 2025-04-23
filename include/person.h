@@ -58,4 +58,16 @@ public:
 private:
     const int value;
 };
+
+class StaticClass {
+public:
+    StaticClass(int x, int y): commonX(x), commonY(y) {}
+    void output();
+    void modify(int x, int y);
+private:
+    int commonX = 0;
+    int commonY = 0;
+    static int valX;
+    static int valY;
+};
 #endif

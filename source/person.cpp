@@ -29,3 +29,13 @@ void Person::printPerson(ostream &os) {
 void ConstClass::printValue() {
     cout << "const value: " << value << endl;
 }
+
+void StaticClass::output() {
+    cout << "valX: " << commonX << "valY: " << commonY << endl;
+}
+
+/*
+void StaticClass::modify(int x, int y) {
+    valX = x;
+    valY = y;
+}*/
