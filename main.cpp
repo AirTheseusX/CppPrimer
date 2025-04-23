@@ -23,8 +23,5 @@ int main(int argc, char *arg[])
     Sales_data sales3("Hello!", 10, 9.99);
     Sales_data sales4(cin);
 
-    ConstClass con1(100);
-    con1.printValue();
-
     return 0;
 }
