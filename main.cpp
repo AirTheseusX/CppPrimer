@@ -1,4 +1,6 @@
 #include <iostream>
+#include <sstream>
+#include <fstream>
 #include <string>
 #include <vector>
 #include <stdexcept>
@@ -14,6 +16,7 @@ using std::vector;
 using std::begin;
 using std::end;
 using std::initializer_list;
+using std::istringstream;
 
 
 int main(int argc, char *arg[])
@@ -27,5 +30,14 @@ int main(int argc, char *arg[])
     //StaticClass::output();
     //obj.modify(90, 100);
     //StaticClass::output();
+
+    string line, word;
+    vector<PersonInfo> people;
+
+    while (getline(cin, line))
+    {
+        PersonInfo info;
+        istringstream
+    }
     return 0;
 }

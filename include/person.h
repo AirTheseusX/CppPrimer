@@ -70,4 +70,14 @@ private:
     static int valX;
     static int valY;
 };
+
+class PersonInfo {
+public:
+    PersonInfo() = default;
+    PersonInfo(string n, string p) : name(n), phone(p) {}
+    void showPersonInfo();
+private:
+    string name;
+    string phone;
+};
 #endif

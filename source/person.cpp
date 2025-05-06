@@ -39,3 +39,8 @@ void StaticClass::modify(int x, int y) {
     valX = x;
     valY = y;
 }*/
+
+void PersonInfo::showPersonInfo() {
+    cout << "name info: " << this->name << endl;
+    cout << "phone info: " << this->phone << endl;
+}
