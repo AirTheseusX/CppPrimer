@@ -3,6 +3,8 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <deque>
+#include <list>
 #include <stdexcept>
 #include <initializer_list>
 #include "sales_data.h"
@@ -18,26 +20,23 @@ using std::end;
 using std::initializer_list;
 using std::istringstream;
 
+int numCheck(int num) {
+    vector<int> numList = {0,1,2,3,4,5,6,7,8,9};
 
-int main(int argc, char *arg[])
-{
-    Sales_data sales1;
-    Sales_data sales2("Happy Day!");
-    Sales_data sales3("Hello!", 10, 9.99);
-    Sales_data sales4(cin);
-
-    //StaticClass obj(12,13);
-    //StaticClass::output();
-    //obj.modify(90, 100);
-    //StaticClass::output();
-
-    string line, word;
-    vector<PersonInfo> people;
-
-    while (getline(cin, line))
-    {
-        PersonInfo info;
-        istringstream
+    for (vector<int>::iterator it = numList.begin(); it != numList.end(); it++) {
+        if (*it == num) {
+            return *it;
+        }
     }
-    return 0;
+
+    return -1;
+}
+int main(int argc, char *arg[]) {
+    vector<int> num= {1,2};
+    const vector<int> num2 = {1,2,3};
+    auto it = num.begin(), it1 = num2.begin();
+    auto it2 = num.cbegin(), it4 = num2.cbegin();
+
+    cout << "result 3: " << numCheck(3) << endl;
+    cout << "result 90: " << numCheck(90) << endl;
 }
