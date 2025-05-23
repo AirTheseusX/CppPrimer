@@ -31,12 +31,91 @@ int numCheck(int num) {
 
     return -1;
 }
+
+bool vectorCmp(std::list<int> const &v1, std::vector<int> const &v2)
+{
+    if (v1.size() != v2.size())
+        return false;
+    auto i = v1.begin();
+    auto j = v2.begin();
+
+    for (; i != v1.end(); i++, j++)
+    {
+        cout << "i: " << *i << " " << "j: " << *j << endl;
+
+        if (*i != *j)
+            return false;
+    }
+
+    return true;
+}
+
 int main(int argc, char *arg[]) {
     vector<int> num= {1,2};
     const vector<int> num2 = {1,2,3};
-    auto it = num.begin(), it1 = num2.begin();
-    auto it2 = num.cbegin(), it4 = num2.cbegin();
+    auto it = num.begin();
+    auto it1 = num2.begin();
+    auto it2 = num.cbegin();
+    auto it4 = num2.cbegin();
 
     cout << "result 3: " << numCheck(3) << endl;
     cout << "result 90: " << numCheck(90) << endl;
+
+    std::vector<int> str1(10, 9);
+    auto str2 = std::vector<int> {1, 2};
+    auto it5 = str1.begin();
+    auto it6 = str2.begin();
+
+    cout << "it5: " << *it5 << " " << "it6: " << *it6 << endl;
+
+    for (auto &i : str2)
+        cout << i << endl;
+
+    swap(str1, str2);
+
+    cout << "str1: ";
+    for (auto &i : str1)
+        cout << i << " ";
+
+    cout << endl;
+
+    cout << "str2: ";
+    for (auto  &i : str2)
+        cout << i << " ";
+
+    cout << "after swap" << endl;
+    cout <<"it5: " << *it5 << " " << "it6: " << *it6;
+
+    cout << endl;
+
+    auto v1 = std::vector<int>{1,2};
+    auto v2 = std::vector<int>{1,2};
+    auto v3 = std::vector<int>(10, 2);
+    auto v4 = std::vector<int>(8,2);
+
+    auto v5 = std::list<int>{1,2,3,4};
+    auto v6 = std::vector<int>{1,2,3,4};
+
+    cout << vectorCmp(v5, v6) << endl;
+
+    auto v7 = vector<int>{1,2,3,4};
+    v7.push_back(5);
+
+    std::string str3;
+    auto que = std::list<std::string>();
+
+    while (cin >> str3)
+    {
+        cout << "str3: " << str3 << endl;
+        cout << "cin: " << cin.peek() <<endl;
+
+        if (cin.peek() == '\n')
+            break;
+
+        que.push_back(str3);
+    }
+
+    cout << "que: ";
+    for (auto &i : que)
+        cout << i;
 }
