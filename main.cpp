@@ -104,18 +104,34 @@ int main(int argc, char *arg[]) {
     std::string str3;
     auto que = std::list<std::string>();
 
-    while (cin >> str3)
-    {
-        cout << "str3: " << str3 << endl;
-        cout << "cin: " << cin.peek() <<endl;
-
-        if (cin.peek() == '\n')
-            break;
-
-        que.push_back(str3);
-    }
-
     cout << "que: ";
     for (auto &i : que)
         cout << i;
+
+    auto list = std::list<int>{1,2,3,4,5,6,7,8,9,10};
+    auto deque1 = std::deque<int>();
+    auto deque2 = std::deque<int>();
+
+    cout << endl;
+
+    for (auto &i : list)
+    {
+        if (i & 1)
+        {
+            deque1.push_back(i);
+        }
+        else{
+            deque2.push_back(i);
+        }
+    }
+
+    cout << "deque1: ";
+    for (auto &i : deque1)
+        cout << i << " ";
+
+    cout << endl;
+
+    cout << "deque2: ";
+    for (auto &i : deque2)
+        cout << i << " ";
 }
