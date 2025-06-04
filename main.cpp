@@ -7,6 +7,7 @@
 #include <list>
 #include <stdexcept>
 #include <initializer_list>
+#include <forward_list>
 #include "sales_data.h"
 #include "person.h"
 
@@ -50,27 +51,40 @@ bool vectorCmp(std::list<int> const &v1, std::vector<int> const &v2)
     return true;
 }
 
-int main(int argc, char *arg[]) {
-    int a[] = {0,1,1,2,3,5,8,13,21,55,89};
-    auto v = std::vector<int>();
-    auto l = std::list<int>();
+void insertStr(std::forward_list<string> &src, std::string str1, std::string str2)
+{
+    auto i = src.begin();
+    auto pre = src.before_begin();
+    bool  find = false;
 
-    for (auto i : a) {
-        if (i & 1) {
-            v.push_back(i);
+    while (i != src.end())
+    {
+        pre = i;
+        if (*i == str1)
+        {
+            i = src.insert_after(i, str2);
+            find = true;
         }
-        else {
-            l.push_back(i);
+        else
+        {
+            i++;
         }
     }
 
-    cout << "v: ";
-    for (auto &i : v)
-        cout << i << " ";
+    if (find == false)
+    {
+        src.insert_after(pre, str2);
+    }
 
-    cout << endl;
+    cout << "testSrc: ";
 
-    cout << "l: ";
-    for (auto &i : l)
-        cout << i << " ";
+    for (auto &j : src)
+    {
+        cout << j << " ";
+    }
+}
+
+int main(int argc, char *arg[])
+{
+
 }
