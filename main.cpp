@@ -86,5 +86,7 @@ void insertStr(std::forward_list<string> &src, std::string str1, std::string str
 
 int main(int argc, char *arg[])
 {
+    std::string str(vec,2);
 
+    str.insert
 }
