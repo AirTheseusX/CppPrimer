@@ -84,9 +84,20 @@ void insertStr(std::forward_list<string> &src, std::string str1, std::string str
     }
 }
 
+void strReplace(std::string &src, std::string str1, std::string str2) {
+    std::string::size_type pos1 = 0;
+
+    pos1 = src.find(str1);
+
+    src.erase(pos1, pos1 + str1.length());
+    src.insert(pos1, str2);
+}
+
 int main(int argc, char *arg[])
 {
-    std::string str(vec,2);
+    auto str = std::string("tthhbb");
 
-    str.insert
+    strReplace(str, "tt", "bb");
+
+    cout << str;
 }
