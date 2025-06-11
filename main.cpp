@@ -89,8 +89,26 @@ void strReplace(std::string &src, std::string str1, std::string str2) {
 
     pos1 = src.find(str1);
 
-    src.erase(pos1, pos1 + str1.length());
-    src.insert(pos1, str2);
+    //src.erase(pos1, pos1 + str1.length());
+    //src.insert(pos1, str2);
+    src.replace(pos1, str1.length(), str1);
+}
+
+std::string nameGen(std::string name, std::string prefix, std::string succ)
+{
+    name.insert(name.begin(), prefix.begin(), prefix.end());
+
+    name.append(succ);
+
+    return name;
+}
+
+std::string nameGenV2(std::string name, std::string prefix, std::string succ)
+{
+    name.insert(0, prefix);
+    name.insert(name.length(), succ);
+
+    return name;
 }
 
 int main(int argc, char *arg[])
@@ -100,4 +118,10 @@ int main(int argc, char *arg[])
     strReplace(str, "tt", "bb");
 
     cout << str;
+
+    cout << endl;
+    //cout << nameGen("Tom", "Mr.", "III");
+    //cout << endl;
+    cout << nameGenV2("Hello", "Ms.", "IIIII");
+
 }
