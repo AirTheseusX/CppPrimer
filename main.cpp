@@ -113,15 +113,34 @@ std::string nameGenV2(std::string name, std::string prefix, std::string succ)
 
 int main(int argc, char *arg[])
 {
-    auto str = std::string("tthhbb");
+    auto str = std::string("ab2c3d7R4E6");
+    std::string::size_type pos = 0;
 
-    strReplace(str, "tt", "bb");
+    cout << (str.find("99") == std::string::npos);
+    cout << endl;
 
-    cout << str;
+    for (int i = 0; i < str.length();) {
+        //if ((pos = str.find_first_of("0123456789", i)) != std::string::npos) {
+        if ((pos = str.find_first_of("abcdefgABCDEFGR", i)) != std::string::npos) {
+            cout << str[pos] << " ";
+            i = pos + 1;
+        }
+        else {
+            i++;
+        }
+    }
 
     cout << endl;
-    //cout << nameGen("Tom", "Mr.", "III");
-    //cout << endl;
-    cout << nameGenV2("Hello", "Ms.", "IIIII");
 
+    for (int i = 0; i < str.length();) {
+        if (pos = str.find_first_not_of("abcdefgABCDEFGR", i) != std::string::npos) {
+            cout << str[pos] << " ";
+            i = pos + 1;
+        }
+        else {
+            i++;
+        }
+    }
+
+    cout << endl;
 }
