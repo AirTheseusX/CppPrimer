@@ -133,7 +133,8 @@ int main(int argc, char *arg[])
     cout << endl;
 
     for (int i = 0; i < str.length();) {
-        if (pos = str.find_first_not_of("abcdefgABCDEFGR", i) != std::string::npos) {
+        if ((pos = str.find_first_not_of("abcdefgABCDEFGR", i)) != std::string::npos) {
+            cout << "pos: " << pos << endl;
             cout << str[pos] << " ";
             i = pos + 1;
         }
@@ -142,5 +143,13 @@ int main(int argc, char *arg[])
         }
     }
 
-    cout << endl;
+    auto str1 = std::vector<string> {"11.22", "22.33", "33.445", "44.999"};
+    double sum = 0.0;
+
+    for (auto i : str1)
+    {
+        sum += stod(i);
+    }
+
+    cout << "sum: " << sum << endl;
 }
