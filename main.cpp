@@ -8,6 +8,7 @@
 #include <stdexcept>
 #include <initializer_list>
 #include <forward_list>
+#include <stack>
 #include "sales_data.h"
 #include "person.h"
 
@@ -109,6 +110,16 @@ std::string nameGenV2(std::string name, std::string prefix, std::string succ)
     name.insert(name.length(), succ);
 
     return name;
+}
+
+int expCal(std::string str) {
+    auto elementStack = std::stack<char>();
+
+    for (char i : str) {
+        if (i >= '1' && i <= '9' ) {
+            elementStack.push(i);
+        }
+    }
 }
 
 int main(int argc, char *arg[])
